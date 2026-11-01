@@ -1,0 +1,11 @@
+{"info":{"name":"Intro to Backend","schema":"https://schema.getpostman.com/json/collection/v2.1.0/collection.json"},
+"variable":[{"key":"base","value":"http://localhost:4000/api/v1"},{"key":"postId","value":"PASTE_POST_ID"}],
+"item":[
+{"name":"Register","request":{"method":"POST","header":[{"key":"Content-Type","value":"application/json"}],"body":{"mode":"raw","raw":"{\n  \"username\": \"rahul\",\n  \"email\": \"rahul@test.com\",\n  \"password\": \"secret123\"\n}"},"url":"{{base}}/users/register"}},
+{"name":"Login","request":{"method":"POST","header":[{"key":"Content-Type","value":"application/json"}],"body":{"mode":"raw","raw":"{\n  \"email\": \"rahul@test.com\",\n  \"password\": \"secret123\"\n}"},"url":"{{base}}/users/login"}},
+{"name":"Logout","request":{"method":"POST","header":[{"key":"Content-Type","value":"application/json"}],"body":{"mode":"raw","raw":"{\n  \"email\": \"rahul@test.com\"\n}"},"url":"{{base}}/users/logout"}},
+{"name":"Create Post","request":{"method":"POST","header":[{"key":"Content-Type","value":"application/json"}],"body":{"mode":"raw","raw":"{\n  \"name\": \"First post\",\n  \"description\": \"Hello world\",\n  \"age\": 21\n}"},"url":"{{base}}/posts/create"}},
+{"name":"Get Posts","request":{"method":"GET","url":"{{base}}/posts/getPosts"}},
+{"name":"Update Post","request":{"method":"PATCH","header":[{"key":"Content-Type","value":"application/json"}],"body":{"mode":"raw","raw":"{\n  \"age\": 25\n}"},"url":"{{base}}/posts/update/{{postId}}"}},
+{"name":"Delete Post","request":{"method":"DELETE","url":"{{base}}/posts/delete/{{postId}}"}}
+]}
